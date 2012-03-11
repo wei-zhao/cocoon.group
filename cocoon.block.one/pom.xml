@@ -66,7 +66,7 @@
         <version>6.1.7</version>
         <configuration>
         <scanIntervalSeconds>10</scanIntervalSeconds>
-                <stopKey>cocoon.clock.one</stopKey>
+                <stopKey>cocoon.block.one</stopKey>
                 <stopPort>9999</stopPort>
           <connectors>
           
