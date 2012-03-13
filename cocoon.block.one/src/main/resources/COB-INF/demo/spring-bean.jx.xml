@@ -19,4 +19,5 @@
 <demo>
   <module>wei.zhao:cocoon.block.one</module>
   <spring>#{message}</spring>
+  <spring>#{name}</spring>
 </demo>

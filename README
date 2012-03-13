@@ -1,5 +1,9 @@
 Your first XML pipeline (publishing)
 http://http://cocoon.apache.org/2.2/1290_1_1.html
+http://www.mail-archive.com/users@cocoon.apache.org/msg45830.html
+
+change #message => #{message}
+
 weizhao
 import from git remote into local git repository 
 	(delete the project in eclipse)

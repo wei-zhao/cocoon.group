@@ -19,7 +19,7 @@
 //
 
 function demo() {
-    var demoBean = cocoon.getComponent("demo");
+    var demoBean = cocoon.getComponent("demo2");
     cocoon.sendPage("screens/spring-bean",
         {
             "message" : demoBean.message

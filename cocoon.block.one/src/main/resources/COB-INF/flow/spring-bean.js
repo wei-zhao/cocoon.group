@@ -21,9 +21,17 @@
 function demo() {
 	
     var demoBean = cocoon.getComponent("demo");
+    //demoBean.setName("Block One");
+    
     cocoon.sendPage("screens/spring-bean",
+        {
+            "message" : demoBean.message,
+            "name": demoBean.name
+        }
+    );
+/*    cocoon.sendPage("screens/spring-bean",
         {
             "message" : demoBean.message
         }
     );
-}
+*/}

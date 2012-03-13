@@ -29,7 +29,8 @@
   http://cocoon.apache.org/schema/pipeline http://cocoon.apache.org/schema/pipeline/cocoon-pipeline-1.0.xsd">
 
   <bean id="demo" class="org.cocoon.block.one.MyBean">
-    <property name="message" value="This is a message coming from a Spring bean." />
+    <property name="message" value="This is a message coming from a Spring bean -- Block One." />
+    <property name="name" value="Block One" />
   </bean>
 
 </beans>
