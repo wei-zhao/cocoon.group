@@ -8,9 +8,9 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>wei.zhao</groupId>
-  <artifactId>cocoon.block.one</artifactId>
+  <artifactId>cocoon.block.two</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>cocoon.block.one</name>
+  <name>cocoon.block.two</name>
   <dependencies>
     <dependency>
       <groupId>org.apache.cocoon</groupId>
@@ -38,16 +38,6 @@
       <version>2.4</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>org.apache.cocoon</groupId>
-      <artifactId>cocoon-fop-impl</artifactId>
-      <version>1.0.0</version>
-    </dependency>
-     <dependency>
-      <groupId>wei.zhao</groupId>
-      <artifactId>cocoon.block.one</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -70,11 +60,7 @@
         <artifactId>maven-jetty-plugin</artifactId>
         <version>6.1.7</version>
         <configuration>
-        <scanIntervalSeconds>10</scanIntervalSeconds>
-                <stopKey>cocoon.block.one</stopKey>
-                <stopPort>9999</stopPort>
           <connectors>
-          
             <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
               <port>8888</port>
               <maxIdleTime>30000</maxIdleTime>
@@ -89,15 +75,6 @@
             </systemProperty>
           </systemProperties>
         </configuration>
-        <executions>
-                <execution>
-                        <id>stop-jetty</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                                <goal>stop</goal>
-                        </goals>
-                </execution>
-        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>

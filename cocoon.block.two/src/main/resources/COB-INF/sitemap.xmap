@@ -63,26 +63,6 @@
         <map:call function="demo"/>
       </map:match>
     </map:pipeline>
-    
-    <map:pipeline>
-      <map:match pattern="firstPipeline">
-        <map:generate src="tutorial/firstXmlFile.xml" type="file"/>
-        <map:serialize type="xml"/>
-      </map:match>
-   
-     <map:match pattern="secondPipeline">
-        <map:generate src="tutorial/firstXmlFile.xml" type="file"/>
-        <map:transform src="tutorial/xslt/secondXslt.xslt" type="xslt"/>
-        <map:serialize type="html"/>
-      </map:match>
-      
-      <map:match pattern="thirdPipeline">
-        <map:generate src="tutorial/firstXmlFile.xml" type="file"/>
-        <map:transform src="tutorial/xslt/xml2PdfFile.xslt" type="xslt"/>
-        <map:serialize type="fo2pdf"/>
-      </map:match>
-    </map:pipeline>
-    
     <map:pipeline id="demo-internal" internal-only="true">
       <!-- This pipeline is invoked by the above flowscript. -->
       <map:match pattern="screens/spring-bean">
@@ -114,22 +94,13 @@
       <!-- Put your servlet service matchers here.
         More details: http://cocoon.zones.apache.org/daisy/cdocs-site-main/g2/1345.html -->
     </map:pipeline>
-     <map:pipeline>
-      <map:match pattern="callingBlock2">
-        <map:generate src="servlet:cocoon.block.two:/spring-bean" type="file"/>
-        <map:serialize type="xml"/>
-      </map:match>
-    </map:pipeline>
-    <map:pipeline>
-      <map:match pattern="callingTransformationService">
-        <map:generate src="demo/welcome.xml"/>
-        <map:transform type="servletService">
-          <map:parameter name="service" 
-           value="servlet:cocoon.block.two:/myXsltTransformation-service"/>
-        </map:transform>
+<map:pipeline>
+      <map:match pattern="myXsltTransformation-service">
+        <map:generate src="service-consumer:"/>
+        <map:transform src="demo/myXsltTransformation.xslt"/>
         <map:serialize type="xhtml"/>
       </map:match>
-    </map:pipeline>
+    </map:pipeline>    
   </map:pipelines>
 
 </map:sitemap>

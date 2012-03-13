@@ -24,12 +24,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
                            http://cocoon.apache.org/schema/servlet http://cocoon.apache.org/schema/servlet/cocoon-servlet-1.0.xsd">
 
-  <bean name="wei.zhao.cocoon.block.one.service" class="org.apache.cocoon.sitemap.SitemapServlet">
-    <servlet:context mount-path="/cocoon.block.one" context-path="blockcontext:/cocoon.block.one/">
-    <servlet:connections>
-        <entry key="cocoon.block.two" value-ref="wei.zhao.cocoon.block.two.service"/>
-      </servlet:connections>
-      </servlet:context>
+  <bean name="wei.zhao.cocoon.block.two.service" class="org.apache.cocoon.sitemap.SitemapServlet">
+    <servlet:context mount-path="/cocoon.block.two" context-path="blockcontext:/cocoon.block.two/"/>
   </bean>
 
 </beans>
