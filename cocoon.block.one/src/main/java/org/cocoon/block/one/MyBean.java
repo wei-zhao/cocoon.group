@@ -18,7 +18,7 @@ package org.cocoon.block.one;
 
 public class MyBean {
 
-    private String message;
+	private String message;// = "This is a message coming from a Spring bean.";
 
     public void setMessage(String message) {
         this.message = message;

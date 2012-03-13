@@ -23,6 +23,7 @@
         <title>Apache Cocoon: Welcome!</title>
       </head>
       <body>
+      DEMO<br/>
         <xsl:copy-of select="content/*"/>
       </body>
     </html>
