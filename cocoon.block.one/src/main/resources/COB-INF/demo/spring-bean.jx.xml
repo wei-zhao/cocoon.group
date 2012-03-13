@@ -18,5 +18,5 @@
 -->
 <demo>
   <module>wei.zhao:cocoon.block.one</module>
-  <spring>#message</spring>
+  <spring>#{message}</spring>
 </demo>
