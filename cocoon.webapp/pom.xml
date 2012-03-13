@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>cocoon.group</artifactId>
+		<groupId>wei.zhao</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>wei.zhao</groupId>
+	<artifactId>cocoon.webapp</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>cocoon.webapp</name>
+	<dependencies>
+		<dependency>
+			<groupId>wei.zhao</groupId>
+			<artifactId>cocoon.block.one</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>wei.zhao</groupId>
+			<artifactId>cocoon.block.two</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.7</version>
+				<configuration>
+					<executions>
+						<execution>
+							<id>prepare</id>
+							<phase>compile</phase>
+							<goals>
+								<goal>prepare</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>stop-jetty</id>
+							<phase>post-integration-test</phase>
+							<goals>
+								<goal>stop</goal>
+							</goals>
+						</execution>
+					</executions>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<stopKey>cocoon.webapp</stopKey>
+					<stopPort>9999</stopPort>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8888</port>
+							<maxIdleTime>30000</maxIdleTime>
+						</connector>
+					</connectors>
+					<webAppSourceDirectory>${project.build.directory}/${pom.artifactId}-${pom.version}</webAppSourceDirectory>
+					<contextPath>/</contextPath>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

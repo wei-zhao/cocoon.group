@@ -8,5 +8,6 @@
   <modules>
   	<module>cocoon.block.one</module>
   	<module>cocoon.block.two</module>
+  	<module>cocoon.webapp</module>
   </modules>
 </project>
